@@ -1,0 +1,38 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    
+  </nav>
+<div class="container">
+  <button routerLink='/contact' type="button" class="btn btn-primary">Add new contact</button>
+  <h2>
+    Contacts
+  </h2>
+
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{contact.id}}</td>
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.address}}</td>
+        <td>{{contact.phone}}</td>
+        <td (click)="deleteContact(contact.id)">
+          <button type="button" class="btn btn-danger">DELETE</button>
+        </td>
+        <td [routerLink]="['/updateContact', contact.id]">
+          <button type="button" class="btn btn-info">UPDATE</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

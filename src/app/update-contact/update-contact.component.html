@@ -1,0 +1,39 @@
+
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+</nav>
+<div class="container">
+    <button routerLink="/" type="submit" class="btn btn-primary">Go Back</button>
+  <h2>
+    Add new contact
+  </h2>
+
+  <form id=formNewComtact name="formNewContact" #contactData="ngForm" (ngSubmit)="updateContact(contactData.value)">
+    <div class="form-group">
+      <div class="col-10">
+        <label>First Name: </label>
+        <input class="form-control" type="text" name="firstName" id="firstName" placeholder="firstName" [(ngModel)]="data.firstName"
+          ngModel>
+      </div>
+      <div class="col-10">
+      </div>
+      <label>Last Name: </label>
+      <input class="form-control" type="text" name="lastName" id="lastName" placeholder="lastName" [(ngModel)]="data.lastName"
+        ngModel>
+      <div class="col-10">
+      </div>
+      <label>Address: </label>
+      <input class="form-control" type="text" name="address" id="address" placeholder="address" [(ngModel)]="data.address" ngModel>
+      <div class="col-10">
+      </div>
+      <label>Phone: </label>
+      <input class="form-control" type="text" name="phone" id="phone" placeholder="phone" [(ngModel)]="data.phone" ngModel>
+      <div class="col-10">
+      </div>
+
+      <input class="btn btn-primary" type="submit" value="Update Contact">
+    </div>
+  </form>
+  <br>
+  <h3 *ngIf="isAdded">{{confirmationString}}</h3>
+</div>
